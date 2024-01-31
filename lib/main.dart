@@ -5,11 +5,13 @@ import 'package:get/get.dart';
 import 'package:igniteiq/Authentication%20pages/otpVerification/phonenumber_input.dart';
 import 'package:igniteiq/Authentication%20pages/otpVerification/verification_screen.dart';
 import 'package:igniteiq/bindings/controller_binding.dart';
+import 'package:igniteiq/common/components/app_pages.dart';
 import 'package:igniteiq/common/components/startup_page.dart';
 import 'package:igniteiq/pages/studentpages/views/student_screen.dart';
 
 import 'Authentication pages/authpages/log_in.dart';
 import 'Authentication pages/authpages/signup_page.dart';
+import 'common/components/app_routes.dart';
 import 'pages/studentpages/views/dashboard_page.dart';
 import 'pages/studentpages/views/mycourses_page.dart';
 import 'pages/studentpages/views/profile_page.dart';
@@ -45,25 +47,10 @@ class MyApp extends StatelessWidget {
       builder: EasyLoading.init(),
       debugShowCheckedModeBanner: false,
       initialBinding: ControllerBinding(),
-      initialRoute: '/startup',
-      getPages: [
-        // Replace with your actual pages
-        GetPage(name: '/dashboard', page: () => const DashboardPage()),
-        GetPage(name: '/my_courses', page: () => const MyCourses()),
-        GetPage(name: '/profile', page: () => const ProfilePage()),
-        GetPage(name: '/settings', page: () => const SettingsPage()),
-        GetPage(name: '/student', page: () => StudentHomeScreen()),
-        GetPage(name: '/otp', page: () => OtpVerificationScreen()),
-        GetPage(name: '/phone', page: () => PhoneNumberInput()),
-        GetPage(name: '/startup', page: () => const StartUPPage()),
-        GetPage(name: '/welcome', page: () => WelcomeScreen()),
-        GetPage(name: '/login', page: () => LogInScreen()),
-        GetPage(name: '/signup', page: () => SignUpScreen()),
-        GetPage(name: '/homescreen', page: () => HomeScreen()),
-        GetPage(name: '/course/:id', page: () => const TeacherCourseDetails())
-        // GetPage(name: '/verify', page: () => VerificationScreen()),
-      ],
-      // home: StudentHomeScreen(),
+      // initialRoute: AppRoutes.startup,
+      // getPages: Routes.getPages,
+
+      home: StudentHomeScreen(),
     );
   }
 }

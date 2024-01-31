@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:igniteiq/Authentication%20pages/otpVerification/verification_screen.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../common/components/intl_phone.dart';
@@ -76,7 +77,7 @@ class PhoneNumberInput extends StatelessWidget {
                             // String phoneNumber = phoneNumberController.text.trim();
                             controller
                                 .verifyPhoneNumber(phoneNumberController.text);
-                            Get.toNamed('/otp');
+                            Get.offAll(OtpVerificationScreen());
                           },
                           child: const Text('Register now')),
                     ),

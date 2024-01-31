@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:igniteiq/Authentication%20pages/authpages/signup_page.dart';
 
 import '../../common/components/formfield_builder.dart';
 import '../../common/components/text_form_field_validator.dart';
@@ -30,8 +31,9 @@ class LogInScreen extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 15, right: 15, top: 10),
-                  child: const Image(image: AssetImage('assets/icons/person1.png'))),
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 10),
+                    child: const Image(
+                        image: AssetImage('assets/icons/person1.png'))),
                 const SizedBox(
                   height: 15,
                 ),
@@ -131,7 +133,7 @@ class LogInScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.offAllNamed('/signup');
+                          Get.offAll(SignUpScreen());
                         },
                         child: const Text(
                           'Sign up',

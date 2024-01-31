@@ -3,6 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:igniteiq/common/components/startup_page.dart';
+import 'package:igniteiq/common/components/welcome_screen.dart';
+import 'package:igniteiq/pages/studentpages/views/student_screen.dart';
 
 import '../../models/usermodel/user_model.dart';
 
@@ -89,7 +92,7 @@ class AuthController extends GetxController {
       });
       EasyLoading.dismiss();
       Future.delayed(const Duration(seconds: 1), () {
-        Get.offAllNamed("/welcome");
+        Get.offAll(StudentHomeScreen());
       });
     } on FirebaseAuthException catch (e) {
       EasyLoading.showError(e.message!);
@@ -113,11 +116,10 @@ class AuthController extends GetxController {
       user.value = result.user;
       EasyLoading.dismiss();
       Future.delayed(const Duration(seconds: 2), () {
-        Get.offAllNamed('/welcome');
+        Get.offAll(StudentHomeScreen());
       });
 
       EasyLoading.addStatusCallback((_) {
-        
         EasyLoading.show(
           indicator: const Icon(
             Icons.check,

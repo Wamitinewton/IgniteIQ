@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:igniteiq/Authentication%20pages/authpages/log_in.dart';
+import 'package:igniteiq/Authentication%20pages/otpVerification/phonenumber_input.dart';
 import 'package:igniteiq/common/components/divide_line.dart';
 
 import '../../common/components/formfield_builder.dart';
@@ -29,10 +31,9 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                   padding: EdgeInsets.only(left: 15, right: 15, top: 10),
+                  padding: EdgeInsets.only(left: 15, right: 15, top: 10),
                   child: const Image(
-                      image: AssetImage(
-                          'assets/icons/person2.jpg')),
+                      image: AssetImage('assets/icons/person2.jpg')),
                 ),
                 const SizedBox(
                   height: 15,
@@ -153,8 +154,8 @@ class SignUpScreen extends StatelessWidget {
                         width: 20,
                       ),
                       GestureDetector(
-                        onTap: (){
-                          Get.offAllNamed('/login');
+                        onTap: () {
+                          Get.offAll(LogInScreen());
                         },
                         child: const Text(
                           'Sign in',
@@ -196,7 +197,7 @@ class SignUpScreen extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(Colors.purple)),
                     onPressed: () {
-                      Get.toNamed('/phone');
+                      Get.offAll(PhoneNumberInput());
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,

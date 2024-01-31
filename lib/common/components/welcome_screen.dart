@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:igniteiq/Authentication%20pages/authcontrollers/auth_service.dart';
 import 'package:igniteiq/common/components/text_util.dart';
+import 'package:igniteiq/pages/studentpages/views/student_screen.dart';
+import 'package:igniteiq/pages/teacherpages/view/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   final AuthController _authController = Get.find<AuthController>();
@@ -52,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                                   Colors.blue),
                             ),
                             onPressed: () {
-                              Get.offAllNamed('/student');
+                              Get.offAll(StudentHomeScreen());
                             },
                             child: Text('Student')),
                         SizedBox(
@@ -66,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                                   Colors.blue),
                             ),
                             onPressed: () {
-                              Get.offAllNamed('/homescreen');
+                              Get.offAll(HomeScreen());
                             },
                             child: Text('Teacher')),
                       ],

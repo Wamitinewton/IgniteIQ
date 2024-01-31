@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:igniteiq/Authentication%20pages/authpages/log_in.dart';
 
 class StartUPPage extends StatelessWidget {
-   const StartUPPage({super.key});
+  const StartUPPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +24,20 @@ class StartUPPage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const Text('Let\'s get started', style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),),
-              const SizedBox(height: 15,),
+              const Text(
+                'Let\'s get started',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Container(
-                 padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   height: 200,
                   width: 430,
                   decoration: BoxDecoration(
@@ -50,19 +56,22 @@ class StartUPPage extends StatelessWidget {
                 height: 30,
               ),
               ElevatedButton(
-                style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
-                ),
-                onPressed: () {
-                  
-                Get.toNamed('/login');
-                Get.back();
-          
-                 
-              }, child: const Text('Get Started', style: TextStyle(
-                fontSize: 18,
-              ),))
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.purple),
+                  ),
+                  onPressed: () {
+                    Get.offAll(LogInScreen());
+                    // Get.back();
+                  },
+                  child: const Text(
+                    'Get Started',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ))
             ],
           ),
         ),
